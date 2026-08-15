@@ -1,3 +1,12 @@
-for f in $(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(js|mjs|cjs)$'); do
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+
+# Plain JS syntax check
+for f in $(echo "$staged" | grep -E '\.(js|mjs|cjs)$'); do
   node --check "$f" || exit 1
 done
+
+# Backend: lint + typecheck when any backend/ file is staged
+if echo "$staged" | grep -q '^backend/'; then
+  npm --prefix backend run lint || exit 1
+  npm --prefix backend run build -- --noEmit || exit 1
+fi
