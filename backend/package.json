@@ -1,12 +1,31 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "this is a todo backend application",
-  "license": "ISC",
-  "author": "ashutosh kumar",
-  "type": "module",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "this is a todo backend application",
+    "license": "ISC",
+    "author": "ashutosh kumar",
+    "type": "module",
+    "main": "./dist/server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "tsx watch src/server.ts",
+        "build": "tsc",
+        "start": "node dist/server.js",
+        "lint": "eslint .",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/express": "^5.0.6",
+        "@types/node": "^24.13.3",
+        "eslint": "^10.8.1",
+        "eslint-config-prettier": "^10.1.8",
+        "prettier": "^3.9.6",
+        "tsx": "^4.23.12",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.67.0"
+    },
+    "dependencies": {
+        "express": "^5.2.1"
+    }
 }
