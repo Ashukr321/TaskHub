@@ -1,0 +1,1 @@
+echo "Committed: $(git log -1 --pretty=%s)"

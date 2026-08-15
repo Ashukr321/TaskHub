@@ -1,0 +1,4 @@
+grep -qE '^(feat|fix|docs|style|refactor|test|chore|config|perf|ci)(\([a-z0-9-]+\))?:.+' "$1" || {
+  echo "Aborting commit. Message must be: type(scope): subject  e.g. feat(auth): add login"
+  exit 1
+}
