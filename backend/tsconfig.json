@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es2024",
+        "rootDir": "./src/",
+        "outDir": "./dist",
+        "strict": true,
+        "module": "nodenext"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}
+
+/*
+| Option    | Purpose                                                                  |
+| --------- | ------------------------------------------------------------------------ |
+| `target`  | Specifies the JavaScript version to generate (e.g., `ES2017`, `ES2022`). |
+| `module`  | Defines the module system (`CommonJS`, `ESNext`, `NodeNext`, etc.).      |
+| `strict`  | Enables strict type checking to catch more errors.                       |
+| `outDir`  | Directory where compiled JavaScript files are placed.                    |
+| `rootDir` | Directory containing your source TypeScript files.                       |
+| `include` | Files or folders to compile.                                             |
+| `exclude` | Files or folders to ignore.                                              |
+| `baseUrl` | Base directory for module resolution.                                    |
+| `paths`   | Creates import aliases (e.g., `@/components`).                           |
+*/
